@@ -1,8 +1,9 @@
 import TaskCard from '@/components/TaskCard';
 import { Task } from '@/generated/prisma/client';
+import { prisma } from '@/lib/prisma';
 
 export default async function Home() {
-  const data = await getTasks();
+  const data = await getTasksByPrisma();
 
   return (
     <section className="container mx-auto">
@@ -32,6 +33,13 @@ async function getTasks() {
   }
 }
 
-// async function getTasksByPrisma() {
-//   return await prisma.task.findMany();
-// }
+async function getTasksByPrisma() {
+  try {
+    const tasks = await prisma.task.findMany();
+
+    return tasks;
+  } catch (error) {
+    console.error('Error al obtener tareas directamente de DB:', error);
+    return [];
+  }
+}
