@@ -1,5 +1,6 @@
 'use client';
-import { Task } from '@/app/generated/prisma/client';
+
+import { Task } from '@/generated/prisma/client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
