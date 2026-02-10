@@ -1,5 +1,5 @@
-import { Task } from './generated/prisma/browser';
 import TaskCard from '@/components/TaskCard';
+import { Task } from '@/generated/prisma/client';
 
 export default async function Home() {
   const data = await getTasks();
