@@ -2,7 +2,7 @@ import TaskCard from '@/components/TaskCard';
 import { Task } from '@/generated/prisma/client';
 import { prisma } from '@/lib/prisma';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const data = await getTasksByPrisma();
