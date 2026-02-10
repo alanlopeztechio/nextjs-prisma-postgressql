@@ -1,9 +1,8 @@
 'use client';
 
+import { Task } from '@/generated/prisma/client';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { Task } from '../generated/prisma/browser';
-
 const NewPage: React.FC = () => {
   const router = useRouter();
 
