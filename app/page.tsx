@@ -2,6 +2,8 @@ import TaskCard from '@/components/TaskCard';
 import { Task } from '@/generated/prisma/client';
 import { prisma } from '@/lib/prisma';
 
+export const revalidate = 60;
+
 export default async function Home() {
   const data = await getTasksByPrisma();
 
